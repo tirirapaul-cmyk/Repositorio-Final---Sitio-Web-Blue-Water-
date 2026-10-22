@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes para Restaurantes | Blue Water Tulcán</title>
+    <meta name="description" content="Planes de abastecimiento de agua purificada de 20 litros para restaurantes en Tulcán. Entrega rápida en 1 a 2 horas, promoción 10+1 gratis y pedidos directos por WhatsApp.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="config.js"></script>
+    <script src="location-picker.js"></script>
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER & NAVBAR                              -->
+    <!-- ============================================ -->
+    <header class="header">
+        <!-- Announcement Bar -->
+        <div id="promo-banner" class="promo-banner" onclick="openCoverageModal()" role="button" tabindex="0" title="Ver red de cobertura en Tulcán">
+            <div class="promo-banner-content">
+                <span class="promo-icon"><i class="fas fa-map-marker-alt"></i></span>
+                <span class="promo-text">📍 Entrega para Restaurantes en los sectores de Tulcán con cobertura — <strong>1 a 2 horas estimadas</strong></span>
+                <span class="promo-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
+            <button class="close-banner" onclick="event.stopPropagation(); document.getElementById('promo-banner').style.display='none'" aria-label="Cerrar barra"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="container header-container">
+            <a href="index.html" class="logo" title="Ir al Inicio">
+                <img src="img/blue_water_transparente.png" alt="Blue Water Logo" class="h-12 w-auto object-contain">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="hogares.html">HOGARES</a></li>
+                    <li><a href="restaurantes.html" style="color: var(--cyan-bright); font-weight: 700;">RESTAURANTES</a></li>
+                    <li><a href="index.html#proceso">ORIGEN & TECNOLOGÍA</a></li>
+                    <li><a href="index.html#contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-btn" onclick="openCheckoutModal()" title="Ver Carrito y Pedido">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="nav-cart-badge">10</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir Menú"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="hogares.html">HOGARES</a></li>
+            <li><a href="restaurantes.html" style="color: var(--cyan-bright);">RESTAURANTES</a></li>
+            <li><a href="index.html#proceso">ORIGEN & TECNOLOGÍA</a></li>
+            <li><a href="index.html#contacto">CONTACTO</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- 2. HERO BANNER - RESTAURANTES                -->
+    <!-- ============================================ -->
+    <section class="resto-hero" id="banner-restaurantes" style="background-image: url('img/Banner%20Restaurante.jpg');">
+        <div class="resto-hero-overlay"></div>
+
+        <div class="container resto-hero-container">
+            <div class="resto-hero-content">
+                <span class="badge">🍽️ PARA RESTAURANTES</span>
+                <h1>Agua purificada para tu restaurante</h1>
+                <p>Abastece tu establecimiento con botellones de agua purificada y conoce nuestras opciones de compra por volumen y entrega a domicilio en Tulcán.</p>
+                <button type="button" class="btn-resto-cta" onclick="openCheckoutModal()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Realizar pedido</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 2.1 SECCIÓN DE ABASTECIMIENTO RECURRENTE     -->
+    <!-- ============================================ -->
+    <section class="resto-supply-section" id="abastecimiento-restaurante">
+        <div class="resto-supply-container">
+            <div class="resto-supply-header">
+                <p class="eyebrow">SERVICIO PARA ESTABLECIMIENTOS GASTRONÓMICOS</p>
+                <h2 class="section-title">Abastecimiento para tu restaurante</h2>
+                <p class="resto-supply-lead">
+                    Sabemos que contar con agua disponible es importante para las actividades diarias de tu restaurante. En Blue Water puedes consultar nuestras opciones de compra por volumen y coordinar tus necesidades de abastecimiento.
+                </p>
+            </div>
+
+            <div class="resto-supply-grid">
+                <!-- Tarjeta 1: Compras por volumen -->
+                <div class="resto-supply-card">
+                    <div class="resto-supply-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Compras por volumen</h3>
+                    <p>Adquiere varios botellones en un mismo pedido y aprovecha las promociones disponibles.</p>
+                </div>
+
+                <!-- Tarjeta 2: Entrega a domicilio -->
+                <div class="resto-supply-card">
+                    <div class="resto-supply-icon">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h3>Entrega a domicilio</h3>
+                    <p>Solicita tus botellones para entrega en los sectores de Tulcán incluidos en nuestra cobertura.</p>
+                </div>
+
+                <!-- Tarjeta 3: Atención directa -->
+                <div class="resto-supply-card">
+                    <div class="resto-supply-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>Atención directa</h3>
+                    <p>Comunícate con Blue Water para consultar cantidades, disponibilidad y opciones de abastecimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 3. PLANES DE SERVICIO PARA RESTAURANTES      -->
+    <!-- ============================================ -->
+    <section class="resto-plans-section" id="planes-restaurantes">
+        <div class="resto-plans-container">
+            <div class="resto-plans-header">
+                <p class="eyebrow">ABASTECIMIENTO CONTINUO & CONFIABLE</p>
+                <h2 class="section-title text-3xl font-bold text-white">PLANES DE SERVICIO PARA RESTAURANTES</h2>
+                <p class="section-lead">
+                    Selecciona tu plan con un solo clic. El carrito cargará automáticamente los botellones, aplicará la bonificación 10 + 1 y calculará tu total en USD.
+                </p>
+            </div>
+
+            <!-- Grilla Comparativa de 2 Tarjetas Equilibradas -->
+            <div class="resto-plans-grid">
+
+                <!-- TARJETA 1: ENTREGA A DOMICILIO ($2.00 c/u) -->
+                <article class="resto-plan-card" id="card-plan-1" onclick="selectPlan('Entrega a Domicilio ($2.00 c/u)', 1)" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { selectPlan('Entrega a Domicilio ($2.00 c/u)', 1); event.preventDefault(); }" aria-label="Seleccionar Entrega a Domicilio $2.00 c/u">
+                    <div class="resto-card-img-wrapper">
+                        <img src="img/Foto%20de%20Domicilio.jpg" alt="Foto de Domicilio - Servicio para Restaurantes Blue Water en Tulcán" class="resto-card-img">
+                    </div>
+
+                    <div class="resto-card-body">
+                        <div class="resto-card-main-content">
+                            <span class="resto-plan-top-badge"><i class="fas fa-truck"></i> Pedidos por Unidad</span>
+                            <h3 class="resto-plan-name">Entrega a Domicilio ($2.00 c/u)</h3>
+
+                            <div class="resto-plan-pricing-box">
+                                <div class="price-row">
+                                    <span class="resto-plan-price-num">$2.00</span>
+                                    <span class="resto-plan-price-curr">USD</span>
+                                    <span class="price-unit">/ botellón</span>
+                                </div>
+                                <div class="resto-plan-bottles-info">
+                                    <strong>1 Botellón pagado (20L)</strong>
+                                </div>
+                            </div>
+
+                            <ul class="resto-plan-features">
+                                <li>
+                                    <i class="fas fa-check" style="color: #10B981;"></i>
+                                    <span><strong>Sin compra mínima:</strong> Pide desde 1 unidad cuando lo necesites.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check" style="color: #10B981;"></i>
+                                    <span><strong>Despacho rápido a tu local</strong> en Tulcán (1 a 2 horas).</span>
+                                </li>
+                            </ul>
+
+                            <div class="envase-first-buy-note">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Si no dispones de un envase retornable, consulta las condiciones de tu primera compra.</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-select-plan btn-plan-outline" onclick="event.stopPropagation(); selectPlan('Entrega a Domicilio ($2.00 c/u)', 1)">
+                            <i class="fas fa-cart-plus"></i>
+                            <span>Seleccionar Opción</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- TARJETA 2: PLAN PROMOCIONAL RESTAURANTE (PROMOCIÓN 10 + 1) -->
+                <article class="resto-plan-card featured active-selection" id="card-plan-2" onclick="selectPlan('Plan Promocional (10 + 1 GRATIS)', 10)" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { selectPlan('Plan Promocional (10 + 1 GRATIS)', 10); event.preventDefault(); }" aria-label="Seleccionar Plan Promocional 10 + 1 GRATIS" style="cursor: pointer;">
+                    <div class="resto-ribbon-badge">
+                        <i class="fas fa-gift"></i>
+                        <span>PROMOCIÓN 10 + 1</span>
+                    </div>
+
+                    <div class="resto-card-img-wrapper">
+                        <img src="img/Botellones%20promocion.jpg" alt="Botellones promocion - Plan Promocional Restaurantes Blue Water" class="resto-card-img">
+                    </div>
+
+                    <div class="resto-card-body">
+                        <div class="resto-card-main-content">
+                            <span class="resto-plan-top-badge" style="color: var(--cyan-bright);"><i class="fas fa-tag"></i> PROMOCIÓN 10 + 1</span>
+                            <h3 class="resto-plan-name">Más botellones para tu negocio</h3>
+
+                            <div class="resto-plan-pricing-box" style="border-color: rgba(0, 210, 255, 0.4); background: rgba(11, 23, 38, 0.9);">
+                                <div class="price-row">
+                                    <span class="resto-plan-price-num text-cyan" style="color: #00D2FF;">$20.00</span>
+                                    <span class="resto-plan-price-curr">USD</span>
+                                </div>
+                                <div class="resto-plan-bottles-info">
+                                    <strong>10 Pagados + 1 GRATIS = 11 Botellones</strong>
+                                    <span class="effective-cost">a $1.81 c/u</span>
+                                </div>
+                            </div>
+
+                            <ul class="resto-plan-features">
+                                <li>
+                                    <i class="fas fa-check" style="color: var(--cyan-bright);"></i>
+                                    <span><strong>Por la compra de 10 botellones,</strong> recibe 1 botellón adicional sin costo.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check" style="color: var(--cyan-bright);"></i>
+                                    <span><strong>Despacho a tu restaurante</strong> en Tulcán (1 a 2 horas estimadas).</span>
+                                </li>
+                            </ul>
+
+                            <div class="envase-first-buy-note">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Si no dispones de un envase retornable, consulta las condiciones de tu primera compra.</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-select-plan btn-plan-featured" onclick="event.stopPropagation(); selectPlan('Plan Promocional (10 + 1 GRATIS)', 10); openCheckoutModal();">
+                            <i class="fas fa-gift"></i>
+                            <span>Solicitar promoción</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Bloque Inferior de Ventajas y Garantías para Restaurantes con espaciado amplio -->
+            <div class="resto-guarantees-grid">
+                <div class="resto-guarantee-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h4>Tratamiento y Calidad</h4>
+                    <p>Procesos de filtración y ósmosis inversa que reducen sales disueltas y sustancias en el agua para tus preparaciones.</p>
+                </div>
+                <div class="resto-guarantee-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Puntualidad en Tulcán</h4>
+                    <p>Coordinación y entrega en 1 a 2 horas para que tu servicio de cocina y comedor mantenga su abastecimiento continuo.</p>
+                </div>
+                <div class="resto-guarantee-card">
+                    <i class="fas fa-hand-holding-dollar"></i>
+                    <h4>Precios Claros y Promoción</h4>
+                    <p>Agua purificada con precios claros y promociones por volumen ($2,00 a domicilio con opción 10 + 1 de bonificación).</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 3.1 CONSULTA DE ABASTECIMIENTO SEMANAL       -->
+    <!-- ============================================ -->
+    <section class="resto-weekly-section" id="abastecimiento-semanal">
+        <div class="resto-weekly-container">
+            <div class="resto-weekly-card">
+                <span class="eyebrow"><i class="fas fa-calendar-check"></i> ATENCIÓN Y COORDINACIÓN DIRECTA</span>
+                <h3 class="resto-weekly-title">¿Necesitas agua para tu restaurante cada semana?</h3>
+                <p class="resto-weekly-desc">
+                    Consulta con Blue Water las opciones de abastecimiento según la cantidad de botellones y la frecuencia de compra que necesita tu establecimiento.
+                </p>
+                <a href="https://wa.me/593978745607?text=Hola%2C%20tengo%20un%20restaurante%20en%20Tulc%C3%A1n%20y%20quisiera%20consultar%20las%20opciones%20de%20abastecimiento%20semanal%20de%20agua%20purificada%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer" class="btn-weekly-whatsapp" title="Consultar opciones de abastecimiento semanal por WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Consultar abastecimiento semanal</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- 3.2 CÓMO FUNCIONA NUESTRO SISTEMA DE BOTELLONES RETORNABLES   -->
+    <!-- ============================================================== -->
+    <section class="retornables-section" id="sistema-retornables">
+        <div class="retornables-container">
+
+            <!-- Encabezado de la Sección -->
+            <div class="retornables-header">
+                <span class="retornables-badge">
+                    <i class="fas fa-arrows-rotate"></i> SISTEMA RETORNABLE CONFIABLE
+                </span>
+                <h2 class="retornables-title">¿Cómo funciona nuestro sistema de botellones retornables?</h2>
+                <p class="retornables-subtitle">Conoce cómo se realiza el intercambio de envases y qué debes tener en cuenta al solicitar tu pedido.</p>
+            </div>
+
+            <!-- Grilla con 3 Tarjetas Visuales -->
+            <div class="retornables-grid">
+
+                <!-- TARJETA 1. SOLICITA TU BOTELLÓN -->
+                <article class="retornables-card">
+                    <span class="retornables-step-badge">1</span>
+                    <div class="retornables-icon-wrapper">
+                        <i class="fas fa-bottle-water"></i>
+                    </div>
+                    <h3 class="retornables-card-title">Realiza tu pedido</h3>
+                    <p class="retornables-card-desc">Selecciona la cantidad de botellones que necesitas y elige entre entrega a domicilio o retiro en planta.</p>
+                </article>
+
+                <!-- TARJETA 2. ENTREGA TU ENVASE VACÍO -->
+                <article class="retornables-card">
+                    <span class="retornables-step-badge">2</span>
+                    <div class="retornables-icon-wrapper">
+                        <i class="fas fa-arrows-rotate"></i>
+                    </div>
+                    <h3 class="retornables-card-title">Intercambia tu envase</h3>
+                    <p class="retornables-card-desc">Blue Water utiliza un sistema retornable que permite intercambiar un botellón vacío apto para reutilización por uno lleno.</p>
+                </article>
+
+                <!-- TARJETA 3. RECIBE TU BOTELLÓN -->
+                <article class="retornables-card">
+                    <span class="retornables-step-badge">3</span>
+                    <div class="retornables-icon-wrapper">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="retornables-card-title">Recibe tu agua purificada</h3>
+                    <p class="retornables-card-desc">Recibe tu botellón lleno y sellado, listo para su almacenamiento y consumo conforme a las indicaciones del producto.</p>
+                </article>
+
+            </div>
+
+            <!-- Bloque Informativo sobre Condiciones de Compra -->
+            <div class="retornables-notice-box">
+                <div class="retornables-notice-content">
+                    <div class="retornables-notice-icon">
+                        <i class="fas fa-circle-info"></i>
+                    </div>
+                    <div>
+                        <h4 class="retornables-notice-title">Información importante sobre los envases</h4>
+                        <p class="retornables-notice-text">Blue Water trabaja con botellones retornables. Si es tu primera compra o no dispones de un envase vacío, consulta con nuestro equipo las condiciones disponibles antes de realizar tu pedido.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/593978745607?text=Hola%2C%20quisiera%20consultar%20las%20condiciones%20de%20compra%20de%20Blue%20Water%20porque%20no%20dispongo%20de%20un%20botell%C3%B3n%20retornable%20vac%C3%ADo" target="_blank" rel="noopener noreferrer" class="btn-retornable-whatsapp" title="Consultar sobre el envase por WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Consultar sobre el envase</span>
+                </a>
+            </div>
+
+            <!-- Apartado de Preguntas Frecuentes (Acordeón) -->
+            <div class="retornables-faq-block">
+                <h3 class="retornables-faq-title">Preguntas frecuentes sobre nuestros botellones</h3>
+
+                <div class="retornables-accordion" id="resto-faq-accordion">
+
+                    <!-- Pregunta 1 -->
+                    <div class="retornables-accordion-item">
+                        <button type="button" class="retornables-accordion-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+                            <span>¿Necesito tener un botellón vacío?</span>
+                            <span class="retornables-accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="retornables-accordion-body">
+                            <p>Blue Water utiliza un sistema de intercambio de envases retornables. Si todavía no tienes un botellón vacío, puedes consultar las condiciones de tu primera compra con nuestro equipo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="retornables-accordion-item">
+                        <button type="button" class="retornables-accordion-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+                            <span>¿Qué ocurre si mi botellón está deteriorado?</span>
+                            <span class="retornables-accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="retornables-accordion-body">
+                            <p>Los envases retornables deben encontrarse en condiciones adecuadas para su reutilización. Puedes consultar con Blue Water si tu botellón es apto para el intercambio.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="retornables-accordion-item">
+                        <button type="button" class="retornables-accordion-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+                            <span>¿Puedo utilizar un botellón de otra marca?</span>
+                            <span class="retornables-accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="retornables-accordion-body">
+                            <p>La aceptación de envases de otras marcas está sujeta a las condiciones de intercambio de Blue Water. Consulta con nuestro equipo antes de realizar el pedido.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="retornables-accordion-item">
+                        <button type="button" class="retornables-accordion-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+                            <span>¿Cómo debo conservar el botellón?</span>
+                            <span class="retornables-accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="retornables-accordion-body">
+                            <p>Conserva el botellón en un lugar fresco, limpio y seco, protegido de la luz solar directa.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 4. BARRA DE CARRITO FLOTANTE / PERSISTENTE   -->
+    <!-- ============================================ -->
+    <aside class="resto-cart-bar" id="resto-cart-bar" aria-label="Resumen de Carrito Restaurantes">
+        <div class="resto-cart-container">
+            <!-- Izquierda: Miniatura Dinámica + Estado del Plan y Botellones -->
+            <div class="resto-cart-left">
+                <!-- Miniatura Dinámica fija: Botellon PNG con Badge Numérico en esquina superior derecha -->
+                <div class="bar-product-thumb-wrapper" aria-hidden="true">
+                    <img src="img/Botellon%20PNG.png" alt="Botellón 20L Blue Water" class="bar-product-thumb">
+                    <span class="bar-thumb-qty-badge" id="bar-badge-count">11</span>
+                </div>
+                <div class="resto-cart-details">
+                    <div class="resto-cart-plan-title">
+                        <span id="bar-plan-name">Plan Promocional Restaurante ($20.00 - 10+1)</span>
+                        <span class="resto-cart-promo-tag" id="bar-promo-tag"><i class="fas fa-gift"></i> 1 GRATIS ACTIVA</span>
+                    </div>
+                    <div class="resto-cart-breakdown-text" id="bar-breakdown-text">
+                        <strong id="bar-paid-qty">10</strong> pagados + 
+                        <span class="free-highlight" id="bar-free-qty">1 GRATIS</span> = 
+                        <strong id="bar-total-qty">11</strong> botellones a entregar (20L)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centro: Controles de Cantidad Rápida -->
+            <div class="resto-cart-mid">
+                <span class="resto-cart-label">Ajustar:</span>
+                <div class="resto-stepper-sm">
+                    <button type="button" class="stepper-btn-sm" onclick="adjustQuantity(-1)" aria-label="Restar un botellón"><i class="fas fa-minus"></i></button>
+                    <span class="stepper-display-sm" id="bar-stepper-val">10</span>
+                    <button type="button" class="stepper-btn-sm" onclick="adjustQuantity(1)" aria-label="Sumar un botellón"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- Derecha: Precio Total y Botón de Checkout -->
+            <div class="resto-cart-right">
+                <div class="resto-cart-price-block">
+                    <span>Total a pagar</span>
+                    <strong id="bar-total-price">$20.00</strong>
+                </div>
+
+                <button type="button" class="btn-cart-checkout" onclick="openCheckoutModal()" id="btn-open-checkout">
+                    <span>PEDIR / IR A PAGAR</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ============================================ -->
+    <!-- 5 & 6. MODAL DE CHECKOUT & VISTA PREVIA      -->
+    <!-- ============================================ -->
+    <div class="resto-modal-overlay" id="resto-modal-overlay" onclick="handleOverlayClick(event)" role="dialog" aria-modal="true" aria-labelledby="modal-step-title">
+        <div class="resto-modal-card">
+
+            <!-- Encabezado del Modal -->
+            <div class="resto-modal-header">
+                <div class="resto-modal-title">
+                    <div class="resto-modal-title-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div>
+                        <h3 id="modal-step-title">Checkout para Restaurantes</h3>
+                        <p id="modal-step-subtitle">Ingresa los datos para coordinar el despacho en Tulcán</p>
+                    </div>
+                </div>
+                <button type="button" class="resto-modal-close" onclick="closeCheckoutModal()" aria-label="Cerrar ventana">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Contenido del Modal -->
+            <div class="resto-modal-body">
+
+                <!-- PASO 1: FORMULARIO DE DATOS DE ENVÍO Y PAGO -->
+                <div id="step-form-view">
+                    <!-- Resumen Compacto Superior -->
+                    <div class="modal-order-summary-box">
+                        <div class="modal-summary-plan">
+                            <span id="modal-summary-plan-label">Plan Seleccionado:</span>
+                            <strong id="modal-summary-plan-name" style="color: #ffffff;">Plan Promocional Restaurante</strong>
+                            <span id="modal-summary-breakdown" style="color: #34D399;">10 pagados + 1 GRATIS (11 botellones)</span>
+                        </div>
+                        <div class="modal-summary-totals">
+                            <span style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase;">Total a pagar:</span>
+                            <div class="total-price" id="modal-summary-total">$20.00 USD</div>
+                        </div>
+                    </div>
+
+                    <form id="resto-checkout-form" onsubmit="handleFormSubmit(event)" novalidate style="display: flex; flex-direction: column; gap: 16px; margin-top: 14px;">
+
+                        <!-- A. DATOS DEL ESTABLECIMIENTO -->
+                        <div class="form-section-group">
+                            <div class="form-section-title">
+                                <i class="fas fa-store"></i>
+                                <span>A. Datos del Establecimiento</span>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field">
+                                    <label for="input-resto-name">Nombre del Restaurante <span class="req">*</span></label>
+                                    <input type="text" id="input-resto-name" class="resto-input" placeholder="Ej. Restaurante El Fogón Carchi" required autocomplete="organization">
+                                    <span class="input-feedback" id="feedback-resto-name">Por favor ingresa el nombre del restaurante.</span>
+                                </div>
+                                <div class="form-field">
+                                    <label for="input-manager-name">Nombre del Responsable <span class="req">*</span></label>
+                                    <input type="text" id="input-manager-name" class="resto-input" placeholder="Ej. Carlos Benavides" required autocomplete="name">
+                                    <span class="input-feedback" id="feedback-manager-name">Por favor ingresa el nombre del responsable.</span>
+                                </div>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field">
+                                    <label for="input-phone">Teléfono de Contacto (WhatsApp) <span class="req">*</span></label>
+                                    <input type="tel" id="input-phone" class="resto-input" placeholder="Ej. 097 874 5607" required autocomplete="tel">
+                                    <span class="input-feedback" id="feedback-phone">Ingresa un número telefónico válido.</span>
+                                </div>
+                                <div class="form-field">
+                                    <label for="input-email">Correo Electrónico <span style="color: #64748b; font-size: 0.74rem;">(Opcional)</span></label>
+                                    <input type="email" id="input-email" class="resto-input" placeholder="Ej. contacto@restaurante.com" autocomplete="email">
+                                    <span class="input-feedback" id="feedback-email">Ingresa un correo electrónico válido si deseas especificarlo.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- B. DIRECCIÓN Y UBICACIÓN -->
+                        <div class="form-section-group">
+                            <div class="form-section-title">
+                                <i class="fas fa-map-location-dot"></i>
+                                <span>B. Dirección y Ubicación en Tulcán</span>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field">
+                                    <label for="input-city">Ciudad / Localidad</label>
+                                    <input type="text" id="input-city" class="resto-input" value="Tulcán" readonly style="background: rgba(15, 23, 42, 0.6); color: #94a3b8; cursor: not-allowed;">
+                                </div>
+                                <div class="form-field">
+                                    <label for="input-sector">Barrio o Sector <span style="color: #64748b; font-size: 0.74rem;">(Opcional)</span></label>
+                                    <input type="text" id="input-sector" class="resto-input" placeholder="Ej. Centro, Tajamar, UPEC, La Laguna">
+                                </div>
+                            </div>
+
+                            <!-- Campo 1: Dirección de entrega -->
+                            <div class="form-field">
+                                <label for="input-address">Dirección <span class="req">*</span></label>
+                                <input type="text" id="input-address" class="resto-input" placeholder="Ejemplo: calle principal y calle secundaria" required autocomplete="street-address">
+                                <span class="input-feedback" id="feedback-address">Por favor ingresa la dirección de entrega de tu local.</span>
+                            </div>
+
+                            <!-- Campo 2: Referencia de ubicación -->
+                            <div class="form-field">
+                                <label for="input-reference">Referencia (opcional)</label>
+                                <input type="text" id="input-reference" class="resto-input" placeholder="Ejemplo: casa azul, junto a la farmacia">
+                            </div>
+
+                            <!-- Campo 3: Ubicación en el mapa interactivo -->
+                            <div class="form-field">
+                                <label>Ubicación en el mapa <span class="req">*</span></label>
+                                <div id="resto-map-selector-container"></div>
+                                <span class="input-feedback" id="feedback-location-required">Por favor selecciona y confirma la ubicación de tu establecimiento en el mapa.</span>
+                            </div>
+                        </div>
+
+                        <!-- C. FORMA DE PAGO -->
+                        <div class="form-section-group">
+                            <div class="form-section-title">
+                                <i class="fas fa-credit-card"></i>
+                                <span>C. Forma de Pago <span class="req">*</span></span>
+                            </div>
+
+                            <div class="payment-options-grid">
+                                <label class="payment-option-card selected" id="opt-cash-card" onclick="selectPaymentMethod('Efectivo al recibir')">
+                                    <input type="radio" name="payment_method" value="Efectivo al recibir" checked class="payment-radio" id="pay-cash">
+                                    <div class="payment-text">
+                                        <strong><i class="fas fa-money-bill-wave" style="color: #10B981;"></i> Efectivo al recibir</strong>
+                                        <p>Cancelas en mano al recibir los botellones en tu restaurante.</p>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option-card" id="opt-transfer-card" onclick="selectPaymentMethod('Transferencia bancaria')">
+                                    <input type="radio" name="payment_method" value="Transferencia bancaria" class="payment-radio" id="pay-transfer">
+                                    <div class="payment-text">
+                                        <strong><i class="fas fa-university" style="color: var(--cyan-bright);"></i> Transferencia bancaria</strong>
+                                        <p>Los datos bancarios se facilitarán al confirmar la recepción del pedido.</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Botón para avanzar a la vista previa -->
+                        <div style="margin-top: 8px;">
+                            <button type="submit" class="btn-select-plan btn-plan-featured" style="padding: 16px; font-size: 0.95rem;">
+                                <span>Continuar a Revisión del Pedido</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- PASO 2: VISTA PREVIA Y CONFIRMACIÓN WHATSAPP -->
+                <div id="step-preview-view" style="display: none;">
+                    <div class="order-preview-card">
+                        <div class="preview-receipt-header">
+                            <div>
+                                <span style="font-size: 0.72rem; color: var(--cyan-bright); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">Resumen de Pedido</span>
+                                <h4 style="color: #ffffff; font-size: 1.15rem; margin: 2px 0 0;">Blue Water — Solución Restaurantes</h4>
+                            </div>
+                            <span class="preview-badge-status"><i class="fas fa-clock"></i> Entrega en 1 a 2 horas</span>
+                        </div>
+
+                        <div class="preview-details-grid">
+                            <div class="preview-detail-item">
+                                <span class="label">Restaurante:</span>
+                                <span class="val" id="prev-resto-name">—</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Responsable:</span>
+                                <span class="val" id="prev-manager-name">—</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Teléfono:</span>
+                                <span class="val" id="prev-phone">—</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Correo:</span>
+                                <span class="val" id="prev-email">No especificado</span>
+                            </div>
+
+                            <div class="preview-detail-item full-width" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <span class="label">Plan Seleccionado:</span>
+                                <span class="val" id="prev-plan-name" style="color: var(--cyan-bright); font-size: 1rem;">Plan Promocional Restaurante</span>
+                            </div>
+
+                            <div class="preview-detail-item">
+                                <span class="label">Botellones pagados:</span>
+                                <span class="val" id="prev-paid-qty">10 unidades</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Botellones gratis (Promo 10+1):</span>
+                                <span class="val" id="prev-free-qty" style="color: #34D399; font-weight: 700;">1 unidad de regalo</span>
+                            </div>
+                            <div class="preview-detail-item full-width">
+                                <span class="label">Total de botellones a entregar:</span>
+                                <span class="val" id="prev-total-qty" style="font-size: 1.1rem; color: #ffffff;">11 botellones (20L)</span>
+                            </div>
+
+                            <div class="preview-detail-item full-width" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <span class="label">Dirección de Entrega:</span>
+                                <span class="val" id="prev-address">—</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Sector / Barrio:</span>
+                                <span class="val" id="prev-sector">N/A</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Referencia:</span>
+                                <span class="val" id="prev-reference">N/A</span>
+                            </div>
+                            <div class="preview-detail-item full-width">
+                                <span class="label">Ubicación Google Maps:</span>
+                                <a href="#" id="prev-maps-link" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-bright); word-break: break-all; font-size: 0.82rem; text-decoration: underline;">—</a>
+                            </div>
+
+                            <div class="preview-detail-item full-width" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <span class="label">Forma de Pago:</span>
+                                <span class="val" id="prev-payment">—</span>
+                            </div>
+                        </div>
+
+                        <!-- Recibo de Precio -->
+                        <div class="preview-pricing-receipt">
+                            <div>
+                                <span class="total-label">Total a pagar en USD:</span>
+                                <span style="display: block; font-size: 0.74rem; color: #94a3b8;">Precio unitario: $2,00 / botellón</span>
+                            </div>
+                            <div class="total-val" id="prev-total-price">$20.00 USD</div>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Acción: Editar vs Confirmar en WhatsApp -->
+                    <div class="modal-actions-wrapper">
+                        <button type="button" class="btn-modal-back" onclick="backToForm()">
+                            <i class="fas fa-edit"></i>
+                            <span>Editar Pedido</span>
+                        </button>
+                        <button type="button" class="btn-modal-submit" onclick="sendOrderToWhatsApp()">
+                            <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i>
+                            <span>Confirmar y Enviar por WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MODAL DE COBERTURA EN TULCÁN                 -->
+    <!-- ============================================ -->
+    <div id="coverage-modal" class="coverage-modal-overlay" onclick="closeCoverageModalOnOverlay(event)" aria-hidden="true" role="dialog" aria-labelledby="coverage-modal-title">
+        <div class="coverage-modal-card">
+            <div class="coverage-modal-header">
+                <div class="coverage-title-wrapper">
+                    <span class="coverage-title-icon"><i class="fas fa-route"></i></span>
+                    <h3 id="coverage-modal-title">Red de Cobertura en Tulcán 🚚💧</h3>
+                </div>
+                <button class="coverage-modal-close" onclick="closeCoverageModal()" aria-label="Cerrar ventana">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="coverage-modal-body">
+                <div class="w-full overflow-hidden rounded-xl bg-slate-800 shadow-inner coverage-map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.756283416187!2d-77.7214!3d0.8117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a19001150bf35%3A0xd6f77ec309f7a77e!2sTulc%C3%A1n%2C%20Ecuador!5e0!3m2!1ses!2sec!4v1700000000000!5m2!1ses!2sec" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de Tulcán Blue Water">
+                    </iframe>
+                </div>
+                <div class="coverage-sectors-section">
+                    <div class="coverage-section-title">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Zonas de cobertura:</span>
+                    </div>
+                    <div class="coverage-chips-grid">
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Centro Comercial & Restaurantes</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Tajamar</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> La Laguna</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Zona UPEC</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> El Rosario</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Redondel del Manteño</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> San José</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Sara Espíndola</span>
+                    </div>
+                </div>
+
+                <!-- Datos Clave (Tiempos y Horarios) -->
+                <div class="coverage-info-grid">
+                    <div class="coverage-info-card">
+                        <div class="info-card-icon"><i class="fas fa-clock"></i></div>
+                        <div class="info-card-details">
+                            <span class="info-label">Tiempo estimado de entrega</span>
+                            <strong class="info-value">de 1 a 2 horas</strong>
+                            <span class="info-sub">Directo en tu local gastronómico</span>
+                        </div>
+                    </div>
+                    <div class="coverage-info-card">
+                        <div class="info-card-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="info-card-details">
+                            <span class="info-label">Horarios de atención</span>
+                            <strong class="info-value">Lunes a Sábado: 7:30 AM - 6:30 PM</strong>
+                            <span class="info-sub">Domingos: 8:00 AM - 1:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="coverage-action-wrapper">
+                    <button type="button" onclick="closeCoverageModal(); openCheckoutModal();" class="coverage-cta-btn" style="border:none; cursor:pointer;">
+                        <i class="fas fa-utensils"></i>
+                        <span>Solicitar Pedido para mi Restaurante</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="footer" style="padding-bottom: 90px;">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="/images/logo.png" alt="Blue Water Logo" onerror="this.onerror=null; this.src='img/logo.png';" style="max-height: 48px; filter: brightness(0) invert(1);">
+                <p>Agua purificada para consumo humano. Envasado y distribución en Tulcán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="restaurantes.html">Restaurantes</a></li>
+                    <li><a href="hogares.html">Hogares</a></li>
+                    <li><a href="index.html#proceso">Proceso de Purificación</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>ATENCIÓN RESTAURANTES</h4>
+                <p><i class="fab fa-whatsapp"></i> 097 874 5607</p>
+                <p><i class="fas fa-map-marker-alt"></i> Planta: Av. 20 de Mayo y vía a El Ángel, Tulcán</p>
+                <p><i class="fas fa-clock"></i> Tiempo estimado de entrega: de 1 a 2 horas</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2027 Blue Water Tulcán. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT E-COMMERCE & CHECKOUT ENGINE      -->
+    <!-- ============================================ -->
+    <script>
+        // ESTADO GLOBAL DEL PEDIDO RESTAURANTE
+        const state = {
+            planName: 'Plan Promocional Restaurante ($20.00 - 10+1)',
+            paidQty: 10,
+            freeQty: 1,
+            unitPrice: 2.00,
+            get totalQty() { return this.paidQty + this.freeQty; },
+            get totalPrice() { return (this.paidQty * this.unitPrice).toFixed(2); },
+            customer: {
+                restoName: '',
+                managerName: '',
+                phone: '',
+                email: '',
+                city: 'Tulcán',
+                address: '',
+                sector: '',
+                reference: '',
+                mapsUrl: '',
+                paymentMethod: 'Efectivo al recibir'
+            }
+        };
+
+        // Instancia del selector de ubicación
+        let restoLocationPicker = null;
+
+        const WHATSAPP_NUMBER = '593978745607';
+
+        // REGLA OFICIAL 10+1: 1 botellón gratis por cada 10 pagados
+        function calculateFreeBottles(paid) {
+            return Math.floor(paid / 10);
+        }
+
+        // SELECCIONAR UN PLAN ESPECÍFICO
+        function selectPlan(planTitle, defaultQty) {
+            state.planName = planTitle;
+            state.paidQty = defaultQty;
+            state.freeQty = calculateFreeBottles(defaultQty);
+            updateUI();
+            
+            // Resaltar visualmente la tarjeta seleccionada con borde activo
+            document.querySelectorAll('.resto-plan-card').forEach(card => card.classList.remove('active-selection'));
+            if (defaultQty === 1) document.getElementById('card-plan-1')?.classList.add('active-selection');
+            if (defaultQty === 10) document.getElementById('card-plan-2')?.classList.add('active-selection');
+
+            // Feedback háptico/animación en la barra inferior
+            animateCartBar();
+        }
+
+        // AJUSTAR CANTIDAD (+ / -) DESDE LA BARRA FIJA INFERIOR (STICKY BAR)
+        function adjustQuantity(delta) {
+            const nextQty = state.paidQty + delta;
+            if (nextQty < 1) return; // Mínimo 1 botellón
+
+            state.paidQty = nextQty;
+            state.freeQty = calculateFreeBottles(state.paidQty);
+
+            // Determinar nombre del plan según cantidad
+            if (state.paidQty === 1) {
+                state.planName = 'Entrega a Domicilio ($2.00 c/u)';
+            } else if (state.paidQty === 10) {
+                state.planName = 'Plan Promocional Restaurante ($20.00 - 10+1)';
+            } else {
+                state.planName = `Pedido Restaurante (${state.paidQty} Botellones)`;
+            }
+
+            // Sincronizar tarjetas activas
+            document.querySelectorAll('.resto-plan-card').forEach(card => card.classList.remove('active-selection'));
+            if (state.paidQty === 1) {
+                document.getElementById('card-plan-1')?.classList.add('active-selection');
+            } else if (state.paidQty === 10) {
+                document.getElementById('card-plan-2')?.classList.add('active-selection');
+            }
+
+            updateUI();
+            animateCartBar();
+        }
+
+        // ACTUALIZAR TODAS LAS VISTAS
+        function updateUI() {
+            // 1. Barra Flotante
+            const barPlanName = document.getElementById('bar-plan-name');
+            const barPaidQty = document.getElementById('bar-paid-qty');
+            const barFreeQty = document.getElementById('bar-free-qty');
+            const barTotalQty = document.getElementById('bar-total-qty');
+            const barTotalPrice = document.getElementById('bar-total-price');
+            const barBadgeCount = document.getElementById('bar-badge-count');
+            const barStepperVal = document.getElementById('bar-stepper-val');
+            const barPromoTag = document.getElementById('bar-promo-tag');
+            const navCartBadge = document.getElementById('nav-cart-badge');
+            const barBreakdownText = document.getElementById('bar-breakdown-text');
+
+            if (barPlanName) barPlanName.textContent = state.planName;
+            if (barPaidQty) barPaidQty.textContent = state.paidQty;
+            if (barFreeQty) barFreeQty.textContent = `${state.freeQty} GRATIS`;
+            if (barTotalQty) barTotalQty.textContent = state.totalQty;
+            if (barTotalPrice) barTotalPrice.textContent = `$${state.totalPrice}`;
+            if (barBadgeCount) barBadgeCount.textContent = state.totalQty;
+            if (barStepperVal) barStepperVal.textContent = state.paidQty;
+            if (navCartBadge) navCartBadge.textContent = state.totalQty;
+
+            // Desglose de botellones dinámico
+            if (barBreakdownText) {
+                if (state.freeQty > 0) {
+                    barBreakdownText.innerHTML = `<strong id="bar-paid-qty">${state.paidQty}</strong> pagados + <span class="free-highlight" id="bar-free-qty">${state.freeQty} GRATIS</span> = <strong id="bar-total-qty">${state.totalQty}</strong> botellones a entregar (20L)`;
+                } else {
+                    barBreakdownText.innerHTML = `<strong id="bar-paid-qty">${state.paidQty}</strong> botellón${state.paidQty > 1 ? 'es' : ''} a entregar (20L) · <strong>$2.00 c/u</strong>`;
+                }
+            }
+
+            // Etiqueta de promoción 1 GRATIS ACTIVA (o N GRATIS ACTIVA)
+            if (barPromoTag) {
+                if (state.freeQty > 0) {
+                    barPromoTag.style.display = 'inline-flex';
+                    barPromoTag.innerHTML = `<i class="fas fa-gift"></i> ${state.freeQty} GRATIS ACTIVA`;
+                } else {
+                    barPromoTag.style.display = 'none';
+                }
+            }
+
+            // 2. Mini resumen en Modal de Checkout
+            const modalPlanName = document.getElementById('modal-summary-plan-name');
+            const modalBreakdown = document.getElementById('modal-summary-breakdown');
+            const modalTotal = document.getElementById('modal-summary-total');
+
+            if (modalPlanName) modalPlanName.textContent = state.planName;
+            if (modalBreakdown) {
+                if (state.freeQty > 0) {
+                    modalBreakdown.textContent = `${state.paidQty} pagados + ${state.freeQty} GRATIS (${state.totalQty} botellones a entregar)`;
+                    modalBreakdown.style.color = '#34D399';
+                } else {
+                    modalBreakdown.textContent = `${state.paidQty} botellón${state.paidQty > 1 ? 'es' : ''} a entregar ($2.00 c/u)`;
+                    modalBreakdown.style.color = '#38BDF8';
+                }
+            }
+            if (modalTotal) modalTotal.textContent = `$${state.totalPrice} USD`;
+        }
+
+        function animateCartBar() {
+            const bar = document.getElementById('resto-cart-bar');
+            if (bar) {
+                bar.style.transform = 'translateY(-4px)';
+                setTimeout(() => { bar.style.transform = 'translateY(0)'; }, 180);
+            }
+        }
+
+        // ============================================
+        // MODAL DE CHECKOUT: CONTROL Y VALIDACIÓN
+        // ============================================
+        const modalOverlay = document.getElementById('resto-modal-overlay');
+        const formView = document.getElementById('step-form-view');
+        const previewView = document.getElementById('step-preview-view');
+        const modalStepTitle = document.getElementById('modal-step-title');
+        const modalStepSubtitle = document.getElementById('modal-step-subtitle');
+
+        function openCheckoutModal() {
+            if (modalOverlay) {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                showFormStep();
+                updateUI();
+            }
+        }
+
+        function closeCheckoutModal() {
+            if (modalOverlay) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === modalOverlay) {
+                closeCheckoutModal();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+                closeCheckoutModal();
+            }
+        });
+
+        function showFormStep() {
+            formView.style.display = 'block';
+            previewView.style.display = 'none';
+            modalStepTitle.textContent = 'Checkout para Restaurantes';
+            modalStepSubtitle.textContent = 'Ingresa los datos para coordinar el despacho en Tulcán';
+        }
+
+        function showPreviewStep() {
+            formView.style.display = 'none';
+            previewView.style.display = 'block';
+            modalStepTitle.textContent = 'Confirmación de Pedido';
+            modalStepSubtitle.textContent = 'Verifica la información antes de enviar por WhatsApp';
+        }
+
+        function backToForm() {
+            showFormStep();
+        }
+
+        // SELECCIÓN DE FORMA DE PAGO
+        function selectPaymentMethod(method) {
+            state.customer.paymentMethod = method;
+            const cashCard = document.getElementById('opt-cash-card');
+            const transferCard = document.getElementById('opt-transfer-card');
+            const cashRadio = document.getElementById('pay-cash');
+            const transferRadio = document.getElementById('pay-transfer');
+
+            if (method === 'Efectivo al recibir') {
+                cashCard.classList.add('selected');
+                transferCard.classList.remove('selected');
+                cashRadio.checked = true;
+            } else {
+                transferCard.classList.add('selected');
+                cashCard.classList.remove('selected');
+                transferRadio.checked = true;
+            }
+        }
+
+        // PROCESAR FORMULARIO (PASO 1 -> PASO 2)
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const restoNameInput = document.getElementById('input-resto-name');
+            const managerNameInput = document.getElementById('input-manager-name');
+            const phoneInput = document.getElementById('input-phone');
+            const emailInput = document.getElementById('input-email');
+            const addressInput = document.getElementById('input-address');
+            const sectorInput = document.getElementById('input-sector');
+            const referenceInput = document.getElementById('input-reference');
+            const feedbackLocationReq = document.getElementById('feedback-location-required');
+
+            let isValid = true;
+
+            // Validar Restaurante
+            if (!restoNameInput.value.trim()) {
+                restoNameInput.classList.add('is-invalid');
+                document.getElementById('feedback-resto-name').classList.add('active');
+                isValid = false;
+            } else {
+                restoNameInput.classList.remove('is-invalid');
+                restoNameInput.classList.add('is-valid');
+                document.getElementById('feedback-resto-name').classList.remove('active');
+            }
+
+            // Validar Responsable
+            if (!managerNameInput.value.trim()) {
+                managerNameInput.classList.add('is-invalid');
+                document.getElementById('feedback-manager-name').classList.add('active');
+                isValid = false;
+            } else {
+                managerNameInput.classList.remove('is-invalid');
+                managerNameInput.classList.add('is-valid');
+                document.getElementById('feedback-manager-name').classList.remove('active');
+            }
+
+            // Validar Teléfono
+            if (!phoneInput.value.trim() || phoneInput.value.trim().length < 7) {
+                phoneInput.classList.add('is-invalid');
+                document.getElementById('feedback-phone').classList.add('active');
+                isValid = false;
+            } else {
+                phoneInput.classList.remove('is-invalid');
+                phoneInput.classList.add('is-valid');
+                document.getElementById('feedback-phone').classList.remove('active');
+            }
+
+            // Validar Dirección
+            if (!addressInput.value.trim()) {
+                addressInput.classList.add('is-invalid');
+                document.getElementById('feedback-address').classList.add('active');
+                isValid = false;
+            } else {
+                addressInput.classList.remove('is-invalid');
+                addressInput.classList.add('is-valid');
+                document.getElementById('feedback-address').classList.remove('active');
+            }
+
+            // Validar Ubicación en el mapa interactivo
+            let generatedMapsUrl = '';
+            if (restoLocationPicker && restoLocationPicker.hasConfirmedLocation()) {
+                generatedMapsUrl = restoLocationPicker.getGoogleMapsUrl();
+                if (feedbackLocationReq) feedbackLocationReq.classList.remove('active');
+            } else {
+                // Modo respaldo cuando Google Maps no esté disponible
+                const isMapUnavailable = restoLocationPicker && (!restoLocationPicker.isGoogleMapsAvailable && !restoLocationPicker.confirmedCoords);
+                if (isMapUnavailable) {
+                    generatedMapsUrl = 'Pendiente de confirmación por WhatsApp';
+                    if (feedbackLocationReq) feedbackLocationReq.classList.remove('active');
+                } else {
+                    isValid = false;
+                    if (feedbackLocationReq) feedbackLocationReq.classList.add('active');
+                }
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            // Guardar en el estado
+            state.customer.restoName = restoNameInput.value.trim();
+            state.customer.managerName = managerNameInput.value.trim();
+            state.customer.phone = phoneInput.value.trim();
+            state.customer.email = emailInput.value.trim() || 'No especificado';
+            state.customer.city = 'Tulcán';
+            state.customer.address = addressInput.value.trim();
+            state.customer.sector = sectorInput ? sectorInput.value.trim() || 'N/A' : 'N/A';
+            state.customer.reference = referenceInput.value.trim() || 'N/A';
+            state.customer.mapsUrl = generatedMapsUrl;
+
+            // Actualizar Pantalla de Vista Previa
+            populatePreviewScreen();
+            showPreviewStep();
+        }
+
+        // LLENAR DATOS EN LA PANTALLA DE VISTA PREVIA
+        function populatePreviewScreen() {
+            document.getElementById('prev-resto-name').textContent = state.customer.restoName;
+            document.getElementById('prev-manager-name').textContent = state.customer.managerName;
+            document.getElementById('prev-phone').textContent = state.customer.phone;
+            document.getElementById('prev-email').textContent = state.customer.email;
+
+            document.getElementById('prev-plan-name').textContent = state.planName;
+            document.getElementById('prev-paid-qty').textContent = `${state.paidQty} unidades`;
+            document.getElementById('prev-free-qty').textContent = state.freeQty > 0 ? `${state.freeQty} unidad${state.freeQty > 1 ? 'es' : ''} de regalo` : '0';
+            document.getElementById('prev-total-qty').textContent = `${state.totalQty} botellones (20L)`;
+
+            document.getElementById('prev-address').textContent = `${state.customer.address}, Tulcán`;
+            document.getElementById('prev-sector').textContent = state.customer.sector;
+            document.getElementById('prev-reference').textContent = state.customer.reference;
+
+            const mapsLinkEl = document.getElementById('prev-maps-link');
+            mapsLinkEl.textContent = state.customer.mapsUrl;
+            mapsLinkEl.href = state.customer.mapsUrl;
+
+            document.getElementById('prev-payment').textContent = state.customer.paymentMethod;
+            document.getElementById('prev-total-price').textContent = `$${state.totalPrice} USD`;
+        }
+
+        // ============================================
+        // 6. GENERACIÓN Y ENVÍO A WHATSAPP
+        // ============================================
+        function sendOrderToWhatsApp() {
+            const c = state.customer;
+
+            // Formato exacto de mensaje para WhatsApp
+            const rawMessage = `Hola, deseo realizar un pedido de Blue Water.
+
+Nombre: ${c.restoName} (Responsable: ${c.managerName})
+Teléfono: ${c.phone}
+Cantidad: ${state.totalQty} botellones (${state.paidQty} pagados${state.freeQty > 0 ? ` + ${state.freeQty} de cortesía` : ''})
+Modalidad: Entrega a domicilio
+Dirección: ${c.address}
+Referencia: ${c.reference}
+Ubicación de entrega: ${c.mapsUrl}
+Forma de pago: ${c.paymentMethod}
+Total estimado: $${state.totalPrice} USD
+
+_Pedido generado desde la página web de Blue Water._`;
+
+            const encodedMessage = encodeURIComponent(rawMessage);
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            // Abrir WhatsApp en nueva pestaña
+            window.open(waUrl, '_blank');
+        }
+
+        // ============================================
+        // MODAL DE COBERTURA
+        // ============================================
+        const coverageModal = document.getElementById('coverage-modal');
+
+        function openCoverageModal() {
+            if (coverageModal) {
+                coverageModal.classList.add('active');
+                coverageModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeCoverageModal() {
+            if (coverageModal) {
+                coverageModal.classList.remove('active');
+                coverageModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeCoverageModalOnOverlay(e) {
+            if (e.target === coverageModal) {
+                closeCoverageModal();
+            }
+        }
+
+        // Función Acordeón Preguntas Frecuentes Botellones Retornables
+        function toggleFaqItem(buttonElement) {
+            const item = buttonElement.closest('.retornables-accordion-item');
+            if (!item) return;
+            const isOpen = item.classList.contains('open');
+
+            // Cerrar otros acordeones si se desea comportamiento único
+            const parent = item.closest('.retornables-accordion');
+            if (parent) {
+                parent.querySelectorAll('.retornables-accordion-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('open');
+                        const otherBtn = otherItem.querySelector('.retornables-accordion-header');
+                        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            if (isOpen) {
+                item.classList.remove('open');
+                buttonElement.setAttribute('aria-expanded', 'false');
+            } else {
+                item.classList.add('open');
+                buttonElement.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // Navegación móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => mobileNav.classList.toggle('active'));
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => mobileNav.classList.remove('active'));
+            });
+        }
+
+        // Scroll header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (header) {
+                header.classList.toggle('scrolled', window.scrollY > 40);
+            }
+        });
+
+        // Inicializar UI y Location Picker al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.BlueWaterLocationPicker) {
+                restoLocationPicker = new BlueWaterLocationPicker({
+                    containerId: 'resto-map-selector-container',
+                    onLocationConfirmed: (coords, isFallback) => {
+                        const feedback = document.getElementById('feedback-location-required');
+                        if (feedback) feedback.classList.remove('active');
+                    },
+                    onLocationCleared: () => {
+                        state.customer.mapsUrl = '';
+                    }
+                });
+            }
+            selectPlan('Plan Promocional Restaurante ($20.00 - 10+1)', 10);
+        });
+    </script>
+</body>
+</html>
