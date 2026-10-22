@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agua Purificada para Hogares | Blue Water Tulcán</title>
+    <meta name="description" content="Agua pura de vertiente en botellones de 20 litros para hogares en Tulcán. Entrega a domicilio por $2.00 o retiro en planta por $1.50. Pedidos directos a domicilio.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER & NAVBAR                              -->
+    <!-- ============================================ -->
+    <header class="header">
+        <!-- Announcement Bar -->
+        <div id="promo-banner" class="promo-banner" onclick="openCoverageModal()" role="button" tabindex="0" title="Ver red de cobertura en Tulcán">
+            <div class="promo-banner-content">
+                <span class="promo-icon"><i class="fas fa-map-marker-alt"></i></span>
+                <span class="promo-text">📍 Distribución a domicilio para Hogares en todo Tulcán — <strong>Consulte su sector</strong></span>
+                <span class="promo-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
+            <button class="close-banner" onclick="event.stopPropagation(); document.getElementById('promo-banner').style.display='none'" aria-label="Cerrar barra"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="container header-container">
+            <a href="index.html" class="logo" title="Ir al Inicio">
+                <img src="img/blue_water_transparente.png" alt="Blue Water Logo" class="h-12 w-auto object-contain">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="hogares.html" style="color: var(--cyan-bright); font-weight: 700;">HOGARES</a></li>
+                    <li><a href="restaurantes.html">RESTAURANTES</a></li>
+                    <li><a href="index.html#proceso">ORIGEN & TECNOLOGÍA</a></li>
+                    <li><a href="index.html#contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-btn" onclick="openCheckoutModal()" title="Ver Pedido para Hogar">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="nav-cart-badge">2</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir Menú"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="hogares.html" style="color: var(--cyan-bright);">HOGARES</a></li>
+            <li><a href="restaurantes.html">RESTAURANTES</a></li>
+            <li><a href="index.html#proceso">ORIGEN & TECNOLOGÍA</a></li>
+            <li><a href="index.html#contacto">CONTACTO</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- 2. HERO BANNER - BOTELLÓN EN COCINA MODERNA  -->
+    <!-- ============================================ -->
+    <section class="hogar-hero" id="banner-hogares" style="background-image: url('img/Botell%C3%B3n%20Blue%20Water%20en%20cocina%20moderna.png');">
+        <div class="hogar-hero-overlay"></div>
+
+        <div class="container hogar-hero-container">
+            <div class="hogar-hero-content">
+                <span class="badge">🏠 HOGARES & FAMILIAS</span>
+                <h1>Frescura y pureza en tu hogar</h1>
+                <p>Llevamos el mejor botellón de 20L directo a tu puerta en Tulcán.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 3. MODALIDADES DE COMPRA Y TARIFAS           -->
+    <!-- ============================================ -->
+    <section class="hogar-modalities-section" id="modalidades-hogar">
+        <div class="hogar-modalities-container">
+            <div class="resto-plans-header hogar-section-header">
+                <p class="hogar-header-kicker eyebrow text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-2" style="color: #22D3EE !important; letter-spacing: 0.25em; font-weight: 700; margin-bottom: 0.5rem;">COBERTURA RESIDENCIAL</p>
+                <h2 class="hogar-header-title section-title text-3xl md:text-4xl font-extrabold tracking-tight mb-3" style="color: #FFFFFF !important; opacity: 1 !important; text-shadow: none !important; margin-bottom: 0.75rem;">Modalidades de Abastecimiento</h2>
+                <p class="hogar-header-desc section-lead text-base md:text-lg font-normal max-w-2xl mx-auto" style="color: #94A3B8 !important; opacity: 1 !important; max-width: 42rem; margin-left: auto; margin-right: auto;">
+                    Seleccione la opción de suministro preferida para su hogar en Tulcán.
+                </p>
+            </div>
+
+            <!-- 2 Tarjetas Comparativas y de Confianza Local -->
+            <div class="hogar-modalities-grid">
+
+                <!-- TARJETA 1: DOMICILIO -->
+                <article class="hogar-modality-card selected-modality" id="card-modality-domicilio" onclick="setModality('domicilio')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); setModality('domicilio');}" role="button" tabindex="0" aria-pressed="true" aria-label="Seleccionar Entrega a Domicilio por 2.00 dólares por botellón de 20L">
+                    <div class="card-img-wrapper">
+                        <img src="img/Foto%20de%20Domicilio.jpg" alt="Foto de Domicilio - Servicio Residencial Blue Water en Tulcán" class="card-hero-img">
+                        <span class="card-floating-badge badge-domicilio">ENTREGA A DOMICILIO</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card-header-info">
+                            <h3 class="card-title">Servicio Residencial</h3>
+                            <div class="card-price-row">
+                                <span class="card-price-num">$2.00</span>
+                                <span class="card-price-unit">/ Botellón 20L</span>
+                            </div>
+                        </div>
+
+                        <ul class="card-trust-points">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Logística y entrega directa en el perímetro urbano.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Envase hermético con garantía de inocuidad y pureza.</span>
+                            </li>
+                        </ul>
+
+                        <button type="button" class="btn-card-action btn-card-primary" onclick="event.stopPropagation(); setModality('domicilio'); openCheckoutModal();" title="Solicitar a Domicilio">
+                            <i class="fas fa-truck-fast"></i>
+                            <span>Solicitar a Domicilio</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- TARJETA 2: RETIRO EN PLANTA -->
+                <article class="hogar-modality-card" id="card-modality-planta" onclick="setModality('planta')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); setModality('planta');}" role="button" tabindex="0" aria-pressed="false" aria-label="Seleccionar Despacho en Planta por 1.50 dólares por botellón de 20L">
+                    <div class="card-img-wrapper">
+                        <img src="img/Foto%20Planta%20Hogares.jpg" alt="Foto Planta Hogares - Adquisición Directa Blue Water Tulcán" class="card-hero-img">
+                        <span class="card-floating-badge badge-planta">DESPACHO EN PLANTA</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card-header-info">
+                            <h3 class="card-title">Adquisición Directa</h3>
+                            <div class="card-price-row">
+                                <span class="card-price-num price-planta">$1.50</span>
+                                <span class="card-price-unit">/ Botellón 20L</span>
+                            </div>
+                        </div>
+
+                        <ul class="card-trust-points">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Tarifa preferencial por recarga o canje de envase.</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Despacho inmediato</span>
+                            </li>
+                        </ul>
+
+                        <button type="button" class="btn-card-action btn-card-outline" onclick="event.stopPropagation(); setModality('planta'); openCoverageModal();" title="Consultar Ubicación">
+                            <i class="fas fa-map-location-dot"></i>
+                            <span>Consultar Ubicación</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Selector de Cantidades y Cálculo Dinámico (Oculto para simplificar el flujo hacia la barra fija única) -->
+            <div class="hogar-qty-calculator" style="display: none;" aria-hidden="true">
+                <div class="qty-calc-info">
+                    <h4><i class="fas fa-calculator" style="color: var(--cyan-bright);"></i> ¿Cuántos botellones necesitas?</h4>
+                    <p style="color: #E2E8F0;">Ingresa la cantidad exacta para tu familia. El total se calcula automáticamente según la modalidad elegida.</p>
+                </div>
+
+                <div class="qty-calc-controls">
+                    <div class="qty-input-group">
+                        <button type="button" class="qty-btn" onclick="changeQty(-1)" aria-label="Restar un botellón"><i class="fas fa-minus"></i></button>
+                        <input type="number" id="hogar-qty-input" class="qty-number-input" value="2" min="1" step="1" oninput="handleQtyManualInput(this)" aria-label="Cantidad de botellones">
+                        <button type="button" class="qty-btn" onclick="changeQty(1)" aria-label="Sumar un botellón"><i class="fas fa-plus"></i></button>
+                    </div>
+
+                    <div class="qty-calc-price-summary">
+                        <span class="formula" id="qty-calc-formula">2 botellones × $2.00 c/u</span>
+                        <span class="total-val" id="qty-calc-total">$4.00 USD</span>
+                    </div>
+
+                    <button type="button" class="btn-add-to-cart-hogar" onclick="addToCartHogar()">
+                        <i class="fas fa-cart-plus"></i>
+                        <span>Añadir al Carrito</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Garantías para Familias con Espaciado Generoso -->
+            <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px;">
+                <div style="background: rgba(17,28,42,0.65); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 24px; text-align: center;">
+                    <i class="fas fa-heart-pulse" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 12px; display: inline-block;"></i>
+                    <h4 style="color: #ffffff; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Salud para los Tuyos</h4>
+                    <p style="color: #E2E8F0; font-size: 0.85rem; line-height: 1.6;">Agua pura de vertiente libre de cloro, metales pesados y microplásticos. Ideal para bebés, niños y adultos mayores.</p>
+                </div>
+                <div style="background: rgba(17,28,42,0.65); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 24px; text-align: center;">
+                    <i class="fas fa-shield-halved" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 12px; display: inline-block;"></i>
+                    <h4 style="color: #ffffff; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Higiene Grado Alimenticio</h4>
+                    <p style="color: #E2E8F0; font-size: 0.85rem; line-height: 1.6;">Cada botellón es esterilizado con luz ultravioleta y ozono antes de su llenado y sellado hermético.</p>
+                </div>
+                <div style="background: rgba(17,28,42,0.65); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 24px; text-align: center;">
+                    <i class="fas fa-bolt" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 12px; display: inline-block;"></i>
+                    <h4 style="color: #ffffff; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Atención Cercana</h4>
+                    <p style="color: #E2E8F0; font-size: 0.85rem; line-height: 1.6;">Empresa 100% tulcaneña comprometida con brindarte agua fresca en tu puerta cuando más lo necesitas.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 4. BARRA DE CARRITO FLOTANTE / PERSISTENTE   -->
+    <!-- ============================================ -->
+    <aside class="resto-cart-bar" id="hogar-cart-bar" aria-label="Resumen de Carrito Hogar">
+        <div class="resto-cart-container">
+            <!-- Izquierda: Miniatura de Producto + Detalles de Modalidad -->
+            <div class="resto-cart-left">
+                <!-- Miniatura dinámica fija: Botellon PNG -->
+                <div class="bar-product-thumb-wrapper" aria-hidden="true">
+                    <img src="img/Botellon%20PNG.png" alt="Botellón 20L Blue Water" class="bar-product-thumb">
+                    <span class="bar-thumb-qty-badge" id="bar-badge-count">1</span>
+                </div>
+                <div class="resto-cart-details">
+                    <div class="resto-cart-plan-title">
+                        <span id="bar-modality-title">Servicio Residencial</span>
+                        <span class="resto-cart-promo-tag" id="bar-price-tag" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">
+                            $2.00 c/u
+                        </span>
+                    </div>
+                    <div class="resto-cart-breakdown-text">
+                        <strong id="bar-bottles-text">1 botellón (20L)</strong> — <span id="bar-subtext">Directo a tu puerta en Tulcán</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centro: Ajuste de Cantidad Rápida -->
+            <div class="resto-cart-mid">
+                <span class="resto-cart-label">Botellones:</span>
+                <div class="resto-stepper-sm">
+                    <button type="button" class="stepper-btn-sm" onclick="changeQty(-1)" aria-label="Restar botellón"><i class="fas fa-minus"></i></button>
+                    <span class="stepper-display-sm" id="bar-stepper-val">1</span>
+                    <button type="button" class="stepper-btn-sm" onclick="changeQty(1)" aria-label="Sumar botellón"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- Derecha: Precio Total y Checkout -->
+            <div class="resto-cart-right">
+                <div class="resto-cart-price-block">
+                    <span>Total a pagar</span>
+                    <strong id="bar-total-price" style="color: #00D2FF;">$2.00</strong>
+                </div>
+
+                <button type="button" class="btn-cart-checkout" onclick="openCheckoutModal()" id="btn-open-checkout">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Finalizar Pedido</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ============================================ -->
+    <!-- 5 & 6. MODAL DE CHECKOUT & VISTA PREVIA      -->
+    <!-- ============================================ -->
+    <div class="resto-modal-overlay" id="hogar-modal-overlay" onclick="handleOverlayClick(event)" role="dialog" aria-modal="true" aria-labelledby="modal-step-title">
+        <div class="resto-modal-card">
+
+            <!-- Encabezado del Modal -->
+            <div class="resto-modal-header">
+                <div class="resto-modal-title">
+                    <div class="resto-modal-title-icon" style="color: #38bdf8; background: rgba(56, 189, 248, 0.15);">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div>
+                        <h3 id="modal-step-title">Checkout para Hogar</h3>
+                        <p id="modal-step-subtitle">Completa los datos para coordinar tu pedido de agua</p>
+                    </div>
+                </div>
+                <button type="button" class="resto-modal-close" onclick="closeCheckoutModal()" aria-label="Cerrar ventana">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Contenido del Modal -->
+            <div class="resto-modal-body">
+
+                <!-- PASO 1: FORMULARIO -->
+                <div id="step-form-view">
+                    <!-- Resumen Compacto Superior -->
+                    <div class="modal-order-summary-box">
+                        <div class="modal-summary-plan">
+                            <span>Modalidad Elegida:</span>
+                            <strong id="modal-summary-modality-name" style="color: #ffffff;">Entrega a Domicilio</strong>
+                            <span id="modal-summary-qty-info" style="color: #38bdf8;">2 botellones (20L) × $2.00</span>
+                        </div>
+                        <div class="modal-summary-totals">
+                            <span style="font-size: 0.72rem; color: #E2E8F0; text-transform: uppercase;">Total a pagar:</span>
+                            <div class="total-price" id="modal-summary-total" style="color: #00D2FF;">$4.00 USD</div>
+                        </div>
+                    </div>
+
+                    <form id="hogar-checkout-form" onsubmit="handleFormSubmit(event)" novalidate style="display: flex; flex-direction: column; gap: 16px; margin-top: 14px;">
+
+                        <!-- A. DATOS DEL CLIENTE -->
+                        <div class="form-section-group">
+                            <div class="form-section-title" style="color: #38bdf8;">
+                                <i class="fas fa-user"></i>
+                                <span>A. Datos del Cliente</span>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field">
+                                    <label for="input-client-name">Nombre y Apellido <span class="req">*</span></label>
+                                    <input type="text" id="input-client-name" class="resto-input" placeholder="Ej. María Elena Caicedo" required autocomplete="name">
+                                    <span class="input-feedback" id="feedback-client-name">Por favor ingresa tu nombre y apellido.</span>
+                                </div>
+                                <div class="form-field">
+                                    <label for="input-phone">Teléfono / WhatsApp <span class="req">*</span></label>
+                                    <input type="tel" id="input-phone" class="resto-input" placeholder="Ej. 097 874 5607" required autocomplete="tel">
+                                    <span class="input-feedback" id="feedback-phone">Ingresa un número telefónico válido.</span>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="input-email">Correo Electrónico <span style="color: #E2E8F0; font-size: 0.74rem;">(Opcional)</span></label>
+                                <input type="email" id="input-email" class="resto-input" placeholder="Ej. mi.correo@gmail.com" autocomplete="email">
+                                <span class="input-feedback" id="feedback-email">Ingresa un correo electrónico válido si deseas especificarlo.</span>
+                            </div>
+                        </div>
+
+                        <!-- B. DIRECCIÓN / UBICACIÓN CONDICIONAL -->
+                        <div class="form-section-group" id="group-delivery-fields">
+                            <div class="form-section-title" style="color: #38bdf8;">
+                                <i class="fas fa-map-location-dot"></i>
+                                <span>B. Dirección de Entrega en Tulcán</span>
+                            </div>
+
+                            <div class="form-grid-2">
+                                <div class="form-field">
+                                    <label for="input-city">Ciudad / Localidad</label>
+                                    <input type="text" id="input-city" class="resto-input" value="Tulcán" readonly style="background: rgba(15, 23, 42, 0.6); color: #E2E8F0; cursor: not-allowed;">
+                                </div>
+                                <div class="form-field">
+                                    <label for="input-sector">Barrio o Sector <span style="color: #E2E8F0; font-size: 0.74rem;">(Opcional)</span></label>
+                                    <input type="text" id="input-sector" class="resto-input" placeholder="Ej. Tajamar, Centro, La Laguna, UPEC">
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="input-address">Dirección Exacta del Hogar <span class="req">*</span></label>
+                                <input type="text" id="input-address" class="resto-input" placeholder="Ej. Calle 10 de Agosto y Pichincha #45-12" required autocomplete="street-address">
+                                <span class="input-feedback" id="feedback-address">Por favor ingresa la dirección de tu vivienda.</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="input-reference">Referencia de la Vivienda <span style="color: #E2E8F0; font-size: 0.74rem;">(Opcional)</span></label>
+                                <input type="text" id="input-reference" class="resto-input" placeholder="Ej. Casa color blanca de 2 pisos, portón negro frente al parque">
+                            </div>
+
+                            <!-- Enlace de Google Maps con Botón de Ayuda -->
+                            <div class="form-field">
+                                <label for="input-maps-url">Enlace de Ubicación de Google Maps <span class="req">*</span></label>
+                                <div class="maps-field-group">
+                                    <input type="url" id="input-maps-url" class="resto-input" placeholder="https://maps.app.goo.gl/... o https://goo.gl/maps/..." required oninput="handleMapsInputValidation(this)">
+                                    <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="btn-open-maps" title="Abrir Google Maps en otra pestaña para compartir ubicación">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Abrir Google Maps</span>
+                                    </a>
+                                </div>
+                                <span class="input-feedback" id="feedback-maps">Por favor ingresa un enlace válido de Google Maps (ej. https://maps.app.goo.gl/... o https://goo.gl/maps/...).</span>
+                                <small style="color: #E2E8F0; font-size: 0.74rem; margin-top: 4px; display: block;">
+                                    💡 <em>Presiona "Abrir Google Maps", ubica tu casa, presiona "Compartir" y pega el enlace aquí.</em>
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- B (Alternativa). RETIRO EN PLANTA NOTA CONFIRMATORIA -->
+                        <div class="form-section-group" id="group-planta-info" style="display: none; background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.35);">
+                            <div class="form-section-title" style="color: #34D399;">
+                                <i class="fas fa-warehouse"></i>
+                                <span>B. Lugar de Retiro en Planta</span>
+                            </div>
+                            <p style="color: #e2e8f0; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">
+                                📍 <strong>Retiro directo en nuestra planta:</strong><br>
+                                Avenida Veintimilla y antigua vía a El Ángel, Tulcán.
+                            </p>
+                            <p style="color: #E2E8F0; font-size: 0.82rem; margin-bottom: 16px;">
+                                No requieres ingresar dirección de entrega. Te esperaremos con tus botellones listos para cargar.
+                            </p>
+                            <a href="https://maps.google.com/?q=Av.+Veintimilla+Tulcan+Ecuador" target="_blank" rel="noopener noreferrer" class="btn-open-maps" style="background: rgba(16, 185, 129, 0.15); border-color: #10B981; color: #34D399; width: fit-content;">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Ver Ubicación de la Planta en Google Maps</span>
+                            </a>
+                        </div>
+
+                        <!-- C. FORMA DE PAGO -->
+                        <div class="form-section-group">
+                            <div class="form-section-title" style="color: #38bdf8;">
+                                <i class="fas fa-credit-card"></i>
+                                <span>C. Forma de Pago <span class="req">*</span></span>
+                            </div>
+
+                            <div class="payment-options-grid">
+                                <label class="payment-option-card selected" id="opt-cash-card" onclick="selectPaymentMethod('Efectivo')">
+                                    <input type="radio" name="payment_method" value="Efectivo" checked class="payment-radio" id="pay-cash">
+                                    <div class="payment-text">
+                                        <strong><i class="fas fa-money-bill-wave" style="color: #10B981;"></i> Efectivo</strong>
+                                        <p id="cash-desc-text">Cancelas al recibir en tu domicilio.</p>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option-card" id="opt-transfer-card" onclick="selectPaymentMethod('Transferencia bancaria')">
+                                    <input type="radio" name="payment_method" value="Transferencia bancaria" class="payment-radio" id="pay-transfer">
+                                    <div class="payment-text">
+                                        <strong><i class="fas fa-university" style="color: #38bdf8;"></i> Transferencia bancaria</strong>
+                                        <p>Los datos bancarios se proporcionarán al confirmar el pedido.</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Botón para avanzar a la vista previa -->
+                        <div style="margin-top: 8px;">
+                            <button type="submit" class="btn-select-plan btn-plan-featured" style="padding: 16px; font-size: 0.95rem;">
+                                <span>Continuar a Revisión del Pedido</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- PASO 2: VISTA PREVIA Y CONFIRMACIÓN WHATSAPP -->
+                <div id="step-preview-view" style="display: none;">
+                    <div class="order-preview-card">
+                        <div class="preview-receipt-header">
+                            <div>
+                                <span style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">Resumen de Pedido</span>
+                                <h4 style="color: #ffffff; font-size: 1.15rem; margin: 2px 0 0;">Blue Water — Agua para el Hogar</h4>
+                            </div>
+                            <span class="preview-badge-status" id="prev-modality-badge"><i class="fas fa-truck"></i> A Domicilio</span>
+                        </div>
+
+                        <div class="preview-details-grid">
+                            <div class="preview-detail-item">
+                                <span class="label">Cliente:</span>
+                                <span class="val" id="prev-client-name">—</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Teléfono:</span>
+                                <span class="val" id="prev-phone">—</span>
+                            </div>
+                            <div class="preview-detail-item full-width">
+                                <span class="label">Correo:</span>
+                                <span class="val" id="prev-email">No especificado</span>
+                            </div>
+
+                            <div class="preview-detail-item full-width" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <span class="label">Modalidad:</span>
+                                <span class="val" id="prev-modality-name" style="color: #38bdf8; font-size: 1rem;">Entrega a Domicilio</span>
+                            </div>
+
+                            <div class="preview-detail-item">
+                                <span class="label">Cantidad de botellones:</span>
+                                <span class="val" id="prev-qty">2 botellones (20L)</span>
+                            </div>
+                            <div class="preview-detail-item">
+                                <span class="label">Precio Unitario:</span>
+                                <span class="val" id="prev-unit-price">$2.00 USD</span>
+                            </div>
+
+                            <!-- Sección de Dirección (si es Domicilio) -->
+                            <div id="prev-delivery-block" class="preview-detail-item full-width" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                    <div class="preview-detail-item full-width">
+                                        <span class="label">Dirección de Entrega:</span>
+                                        <span class="val" id="prev-address">—</span>
+                                    </div>
+                                    <div class="preview-detail-item">
+                                        <span class="label">Sector:</span>
+                                        <span class="val" id="prev-sector">N/A</span>
+                                    </div>
+                                    <div class="preview-detail-item">
+                                        <span class="label">Referencia:</span>
+                                        <span class="val" id="prev-reference">N/A</span>
+                                    </div>
+                                    <div class="preview-detail-item full-width">
+                                        <span class="label">Ubicación Google Maps:</span>
+                                        <a href="#" id="prev-maps-link" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; word-break: break-all; font-size: 0.82rem; text-decoration: underline;">—</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sección de Retiro en Planta (si es Planta) -->
+                            <div id="prev-planta-block" class="preview-detail-item full-width" style="display: none; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <span class="label">Lugar de Retiro:</span>
+                                <span class="val" style="color: #34D399;">Planta: Av. Veintimilla y antigua vía a El Ángel, Tulcán</span>
+                            </div>
+
+                            <div class="preview-detail-item full-width" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 10px;">
+                                <span class="label">Forma de Pago:</span>
+                                <span class="val" id="prev-payment">—</span>
+                            </div>
+                        </div>
+
+                        <!-- Recibo de Precio -->
+                        <div class="preview-pricing-receipt">
+                            <div>
+                                <span class="total-label">Total a pagar en USD:</span>
+                                <span style="display: block; font-size: 0.74rem; color: #E2E8F0;" id="prev-calc-detail">2 botellones × $2.00</span>
+                            </div>
+                            <div class="total-val" id="prev-total-price" style="color: #00D2FF;">$4.00 USD</div>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Acción -->
+                    <div class="modal-actions-wrapper">
+                        <button type="button" class="btn-modal-back" onclick="backToForm()">
+                            <i class="fas fa-edit"></i>
+                            <span>Editar Pedido</span>
+                        </button>
+                        <button type="button" class="btn-modal-submit" onclick="sendOrderToWhatsApp()">
+                            <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i>
+                            <span>Confirmar y Enviar por WhatsApp</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MODAL DE COBERTURA EN TULCÁN                 -->
+    <!-- ============================================ -->
+    <div id="coverage-modal" class="coverage-modal-overlay" onclick="closeCoverageModalOnOverlay(event)" aria-hidden="true" role="dialog" aria-labelledby="coverage-modal-title">
+        <div class="coverage-modal-card">
+            <div class="coverage-modal-header">
+                <div class="coverage-title-wrapper">
+                    <span class="coverage-title-icon"><i class="fas fa-route"></i></span>
+                    <h3 id="coverage-modal-title">Red de Cobertura Residencial Tulcán 🚚💧</h3>
+                </div>
+                <button class="coverage-modal-close" onclick="closeCoverageModal()" aria-label="Cerrar ventana">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="coverage-modal-body">
+                <div class="w-full overflow-hidden rounded-xl bg-slate-800 shadow-inner coverage-map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.756283416187!2d-77.7214!3d0.8117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a19001150bf35%3A0xd6f77ec309f7a77e!2sTulc%C3%A1n%2C%20Ecuador!5e0!3m2!1ses!2sec!4v1700000000000!5m2!1ses!2sec" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de Tulcán Blue Water">
+                    </iframe>
+                </div>
+                <div class="coverage-sectors-section">
+                    <div class="coverage-section-title">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Sectores con entrega a domicilio:</span>
+                    </div>
+                    <div class="coverage-chips-grid">
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Centro</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Tajamar</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> La Laguna</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Zona UPEC</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> El Rosario</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> San José</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Sara Espíndola</span>
+                        <span class="sector-chip active"><i class="fas fa-check"></i> Redondel del Manteño</span>
+                    </div>
+                </div>
+                <div class="coverage-action-wrapper">
+                    <button type="button" onclick="closeCoverageModal(); openCheckoutModal();" class="coverage-cta-btn" style="border:none; cursor:pointer;">
+                        <i class="fas fa-house-water"></i>
+                        <span>Solicitar Pedido para mi Hogar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="footer" style="padding-bottom: 90px;">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Blue Water Logo" onerror="this.src='img/Logo%20Blue%20Water%20reco.png';" style="max-height: 48px; filter: brightness(0) invert(1);">
+                <p>Agua Pura de Vertiente. Frescura y Salud Familiar en Tulcán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="hogares.html">Hogares</a></li>
+                    <li><a href="restaurantes.html">Restaurantes</a></li>
+                    <li><a href="index.html#proceso">Proceso de Purificación</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>ATENCIÓN HOGARES</h4>
+                <p><i class="fab fa-whatsapp"></i> 097 874 5607</p>
+                <p><i class="fas fa-map-marker-alt"></i> Planta: Av. Veintimilla y vía a El Ángel, Tulcán</p>
+                <p><i class="fas fa-truck"></i> Entregas a Domicilio en Tulcán</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2027 Blue Water Tulcán. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT E-COMMERCE HOGARES ENGINE         -->
+    <!-- ============================================ -->
+    <script>
+        // ESTADO GLOBAL DEL PEDIDO HOGAR (SIN PROMOCIONES)
+        const hogarState = {
+            modality: 'domicilio', // 'domicilio' ($2.00) o 'planta' ($1.50)
+            quantity: 1,           // Entero positivo >= 1
+            get unitPrice() {
+                return this.modality === 'domicilio' ? 2.00 : 1.50;
+            },
+            get modalityTitle() {
+                return this.modality === 'domicilio' ? 'Servicio Residencial' : 'Adquisición Directa';
+            },
+            get totalPrice() {
+                return (this.quantity * this.unitPrice).toFixed(2);
+            },
+            customer: {
+                name: '',
+                phone: '',
+                email: '',
+                city: 'Tulcán',
+                address: '',
+                sector: '',
+                reference: '',
+                mapsUrl: '',
+                paymentMethod: 'Efectivo'
+            }
+        };
+
+        const WHATSAPP_NUMBER = '593978745607';
+
+        // SELECCIONAR MODALIDAD (DOMICILIO VS PLANTA)
+        function setModality(mode) {
+            hogarState.modality = mode;
+            updateUI();
+
+            // Sincronizar estilo en las tarjetas
+            const cardDom = document.getElementById('card-modality-domicilio');
+            const cardPlanta = document.getElementById('card-modality-planta');
+
+            if (mode === 'domicilio') {
+                cardDom?.classList.add('selected-modality');
+                cardDom?.setAttribute('aria-pressed', 'true');
+                cardPlanta?.classList.remove('selected-modality');
+                cardPlanta?.setAttribute('aria-pressed', 'false');
+            } else {
+                cardPlanta?.classList.add('selected-modality');
+                cardPlanta?.setAttribute('aria-pressed', 'true');
+                cardDom?.classList.remove('selected-modality');
+                cardDom?.setAttribute('aria-pressed', 'false');
+            }
+
+            animateCartBar();
+        }
+
+        // CAMBIAR CANTIDAD (+ / -)
+        function changeQty(delta) {
+            const nextQty = hogarState.quantity + delta;
+            if (nextQty >= 1) {
+                hogarState.quantity = Math.floor(nextQty);
+                updateUI();
+                animateCartBar();
+            }
+        }
+
+        // ENTRADA MANUAL DE CANTIDAD (VALIDACIÓN ESTRICTA)
+        function handleQtyManualInput(inputEl) {
+            let val = parseInt(inputEl.value, 10);
+            if (isNaN(val) || val < 1) {
+                val = 1;
+            }
+            hogarState.quantity = Math.floor(val);
+            inputEl.value = hogarState.quantity;
+            updateUI();
+            animateCartBar();
+        }
+
+        // BOTÓN "AÑADIR AL CARRITO"
+        function addToCartHogar() {
+            animateCartBar();
+            openCheckoutModal();
+        }
+
+        // ACTUALIZAR TODAS LAS VISTAS
+        function updateUI() {
+            const qty = hogarState.quantity;
+            const unitPrice = hogarState.unitPrice.toFixed(2);
+            const total = hogarState.totalPrice;
+            const isDom = hogarState.modality === 'domicilio';
+
+            // 1. Selector de cantidad en sección
+            const qtyInput = document.getElementById('hogar-qty-input');
+            const calcFormula = document.getElementById('qty-calc-formula');
+            const calcTotal = document.getElementById('qty-calc-total');
+
+            if (qtyInput) qtyInput.value = qty;
+            if (calcFormula) calcFormula.textContent = `${qty} botellón${qty > 1 ? 'es' : ''} × $${unitPrice} c/u`;
+            if (calcTotal) calcTotal.textContent = `$${total} USD`;
+
+            // 2. Barra persistente flotante
+            const barBadge = document.getElementById('bar-badge-count');
+            const barTitle = document.getElementById('bar-modality-title');
+            const barPriceTag = document.getElementById('bar-price-tag');
+            const barBottlesText = document.getElementById('bar-bottles-text');
+            const barSubtext = document.getElementById('bar-subtext');
+            const barStepper = document.getElementById('bar-stepper-val');
+            const barTotal = document.getElementById('bar-total-price');
+            const navBadge = document.getElementById('nav-cart-badge');
+
+            // Miniatura siempre fija (Botellon PNG) — solo el badge cambia
+            if (barBadge) barBadge.textContent = qty;
+            if (barTitle) barTitle.textContent = hogarState.modalityTitle;
+            if (barPriceTag) barPriceTag.textContent = `$${unitPrice} c/u`;
+            if (barBottlesText) barBottlesText.textContent = `${qty} botellón${qty > 1 ? 'es' : ''} (20L)`;
+            if (barSubtext) {
+                barSubtext.textContent = isDom ? 'Directo a tu puerta en Tulcán' : 'Retiro en Planta (Av. Veintimilla)';
+            }
+            if (barStepper) barStepper.textContent = qty;
+            if (barTotal) barTotal.textContent = `$${total}`;
+            if (navBadge) navBadge.textContent = qty;
+
+            // 3. Mini resumen en Modal de Checkout
+            const modalModality = document.getElementById('modal-summary-modality-name');
+            const modalQtyInfo = document.getElementById('modal-summary-qty-info');
+            const modalTotal = document.getElementById('modal-summary-total');
+
+            if (modalModality) modalModality.textContent = hogarState.modalityTitle;
+            if (modalQtyInfo) modalQtyInfo.textContent = `${qty} botellón${qty > 1 ? 'es' : ''} (20L) × $${unitPrice}`;
+            if (modalTotal) modalTotal.textContent = `$${total} USD`;
+
+            // 4. Adaptar campos según modalidad en formulario
+            const deliveryGroup = document.getElementById('group-delivery-fields');
+            const plantaGroup = document.getElementById('group-planta-info');
+            const cashDesc = document.getElementById('cash-desc-text');
+
+            if (isDom) {
+                if (deliveryGroup) deliveryGroup.style.display = 'block';
+                if (plantaGroup) plantaGroup.style.display = 'none';
+                if (cashDesc) cashDesc.textContent = 'Cancelas al recibir en tu domicilio.';
+            } else {
+                if (deliveryGroup) deliveryGroup.style.display = 'none';
+                if (plantaGroup) plantaGroup.style.display = 'block';
+                if (cashDesc) cashDesc.textContent = 'Cancelas al retirar tus botellones en planta.';
+            }
+        }
+
+        function animateCartBar() {
+            const bar = document.getElementById('hogar-cart-bar');
+            if (bar) {
+                bar.style.transform = 'translateY(-4px)';
+                setTimeout(() => { bar.style.transform = 'translateY(0)'; }, 180);
+            }
+        }
+
+        // ============================================
+        // MODAL DE CHECKOUT: CONTROL Y VALIDACIÓN
+        // ============================================
+        const modalOverlay = document.getElementById('hogar-modal-overlay');
+        const formView = document.getElementById('step-form-view');
+        const previewView = document.getElementById('step-preview-view');
+        const modalStepTitle = document.getElementById('modal-step-title');
+        const modalStepSubtitle = document.getElementById('modal-step-subtitle');
+
+        function openCheckoutModal() {
+            if (modalOverlay) {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                showFormStep();
+                updateUI();
+            }
+        }
+
+        function closeCheckoutModal() {
+            if (modalOverlay) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === modalOverlay) {
+                closeCheckoutModal();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+                closeCheckoutModal();
+            }
+        });
+
+        function showFormStep() {
+            formView.style.display = 'block';
+            previewView.style.display = 'none';
+            modalStepTitle.textContent = 'Checkout para Hogar';
+            modalStepSubtitle.textContent = 'Completa los datos para coordinar tu pedido de agua';
+        }
+
+        function showPreviewStep() {
+            formView.style.display = 'none';
+            previewView.style.display = 'block';
+            modalStepTitle.textContent = 'Confirmación de Pedido Residencial';
+            modalStepSubtitle.textContent = 'Verifica la información antes de enviar por WhatsApp';
+        }
+
+        function backToForm() {
+            showFormStep();
+        }
+
+        // SELECCIÓN DE FORMA DE PAGO
+        function selectPaymentMethod(method) {
+            hogarState.customer.paymentMethod = method;
+            const cashCard = document.getElementById('opt-cash-card');
+            const transferCard = document.getElementById('opt-transfer-card');
+            const cashRadio = document.getElementById('pay-cash');
+            const transferRadio = document.getElementById('pay-transfer');
+
+            if (method === 'Efectivo') {
+                cashCard.classList.add('selected');
+                transferCard.classList.remove('selected');
+                cashRadio.checked = true;
+            } else {
+                transferCard.classList.add('selected');
+                cashCard.classList.remove('selected');
+                transferRadio.checked = true;
+            }
+        }
+
+        // VALIDACIÓN DE GOOGLE MAPS URL
+        function isValidGoogleMapsUrl(url) {
+            if (!url) return false;
+            const cleanUrl = url.trim().toLowerCase();
+            const mapsRegex = /^(https?:\/\/)?(www\.)?(google\.[a-z.]+\/maps|maps\.google\.[a-z.]+|maps\.app\.goo\.gl|goo\.gl\/maps)/i;
+            return mapsRegex.test(cleanUrl);
+        }
+
+        function handleMapsInputValidation(inputElement) {
+            const feedback = document.getElementById('feedback-maps');
+            const val = inputElement.value.trim();
+            if (val === '') {
+                inputElement.classList.remove('is-valid', 'is-invalid');
+                feedback.classList.remove('active');
+                return;
+            }
+            if (isValidGoogleMapsUrl(val)) {
+                inputElement.classList.add('is-valid');
+                inputElement.classList.remove('is-invalid');
+                feedback.classList.remove('active');
+            } else {
+                inputElement.classList.add('is-invalid');
+                inputElement.classList.remove('is-valid');
+                feedback.classList.add('active');
+            }
+        }
+
+        // PROCESAR FORMULARIO (PASO 1 -> PASO 2)
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const clientNameInput = document.getElementById('input-client-name');
+            const phoneInput = document.getElementById('input-phone');
+            const emailInput = document.getElementById('input-email');
+            const addressInput = document.getElementById('input-address');
+            const sectorInput = document.getElementById('input-sector');
+            const referenceInput = document.getElementById('input-reference');
+            const mapsUrlInput = document.getElementById('input-maps-url');
+
+            let isValid = true;
+
+            // 1. Validar Nombre
+            if (!clientNameInput.value.trim()) {
+                clientNameInput.classList.add('is-invalid');
+                document.getElementById('feedback-client-name').classList.add('active');
+                isValid = false;
+            } else {
+                clientNameInput.classList.remove('is-invalid');
+                clientNameInput.classList.add('is-valid');
+                document.getElementById('feedback-client-name').classList.remove('active');
+            }
+
+            // 2. Validar Teléfono
+            if (!phoneInput.value.trim() || phoneInput.value.trim().length < 7) {
+                phoneInput.classList.add('is-invalid');
+                document.getElementById('feedback-phone').classList.add('active');
+                isValid = false;
+            } else {
+                phoneInput.classList.remove('is-invalid');
+                phoneInput.classList.add('is-valid');
+                document.getElementById('feedback-phone').classList.remove('active');
+            }
+
+            // 3. Validar Dirección y Maps URL SOLO si es Domicilio
+            const isDom = hogarState.modality === 'domicilio';
+            let mapsVal = '';
+
+            if (isDom) {
+                if (!addressInput.value.trim()) {
+                    addressInput.classList.add('is-invalid');
+                    document.getElementById('feedback-address').classList.add('active');
+                    isValid = false;
+                } else {
+                    addressInput.classList.remove('is-invalid');
+                    addressInput.classList.add('is-valid');
+                    document.getElementById('feedback-address').classList.remove('active');
+                }
+
+                mapsVal = mapsUrlInput.value.trim();
+                if (!isValidGoogleMapsUrl(mapsVal)) {
+                    mapsUrlInput.classList.add('is-invalid');
+                    document.getElementById('feedback-maps').classList.add('active');
+                    isValid = false;
+                } else {
+                    mapsUrlInput.classList.remove('is-invalid');
+                    mapsUrlInput.classList.add('is-valid');
+                    document.getElementById('feedback-maps').classList.remove('active');
+                }
+            }
+
+            if (!isValid) return;
+
+            // Guardar datos en el estado
+            hogarState.customer.name = clientNameInput.value.trim();
+            hogarState.customer.phone = phoneInput.value.trim();
+            hogarState.customer.email = emailInput.value.trim() || 'No especificado';
+            hogarState.customer.city = 'Tulcán';
+
+            if (isDom) {
+                hogarState.customer.address = addressInput.value.trim();
+                hogarState.customer.sector = sectorInput.value.trim() || 'N/A';
+                hogarState.customer.reference = referenceInput.value.trim() || 'N/A';
+                hogarState.customer.mapsUrl = mapsVal;
+            }
+
+            // Actualizar Pantalla de Vista Previa
+            populatePreviewScreen();
+            showPreviewStep();
+        }
+
+        // LLENAR VISTA PREVIA
+        function populatePreviewScreen() {
+            const c = hogarState.customer;
+            const isDom = hogarState.modality === 'domicilio';
+
+            document.getElementById('prev-client-name').textContent = c.name;
+            document.getElementById('prev-phone').textContent = c.phone;
+            document.getElementById('prev-email').textContent = c.email;
+
+            document.getElementById('prev-modality-name').textContent = hogarState.modalityTitle;
+            document.getElementById('prev-qty').textContent = `${hogarState.quantity} botellón${hogarState.quantity > 1 ? 'es' : ''} (20L)`;
+            document.getElementById('prev-unit-price').textContent = `$${hogarState.unitPrice.toFixed(2)} USD`;
+
+            const badge = document.getElementById('prev-modality-badge');
+            if (badge) {
+                badge.innerHTML = isDom ? '<i class="fas fa-truck"></i> A Domicilio' : '<i class="fas fa-warehouse"></i> Retiro en Planta';
+            }
+
+            // Bloques condicionales Domicilio vs Planta
+            const deliveryBlock = document.getElementById('prev-delivery-block');
+            const plantaBlock = document.getElementById('prev-planta-block');
+
+            if (isDom) {
+                if (deliveryBlock) deliveryBlock.style.display = 'block';
+                if (plantaBlock) plantaBlock.style.display = 'none';
+
+                document.getElementById('prev-address').textContent = `${c.address}, Tulcán`;
+                document.getElementById('prev-sector').textContent = c.sector;
+                document.getElementById('prev-reference').textContent = c.reference;
+
+                const mapsEl = document.getElementById('prev-maps-link');
+                mapsEl.textContent = c.mapsUrl;
+                mapsEl.href = c.mapsUrl;
+            } else {
+                if (deliveryBlock) deliveryBlock.style.display = 'none';
+                if (plantaBlock) plantaBlock.style.display = 'block';
+            }
+
+            document.getElementById('prev-payment').textContent = c.paymentMethod;
+            document.getElementById('prev-calc-detail').textContent = `${hogarState.quantity} botellones × $${hogarState.unitPrice.toFixed(2)}`;
+            document.getElementById('prev-total-price').textContent = `$${hogarState.totalPrice} USD`;
+        }
+
+        // ============================================
+        // 6. GENERACIÓN Y ENVÍO A WHATSAPP
+        // ============================================
+        function sendOrderToWhatsApp() {
+            const c = hogarState.customer;
+            const isDom = hogarState.modality === 'domicilio';
+            let rawMessage = '';
+
+            if (isDom) {
+                rawMessage = `*NUEVO PEDIDO HOGAR (DOMICILIO) — BLUE WATER*
+
+DATOS DEL CLIENTE
+- Cliente: ${c.name}
+- Teléfono: ${c.phone}
+- Correo: ${c.email}
+
+DETALLES DEL PEDIDO
+- Modalidad: Entrega a Domicilio
+- Cantidad de botellones: ${hogarState.quantity}
+- Precio unitario: $2,00
+- Total a pagar: $${hogarState.totalPrice}
+
+DIRECCIÓN DE ENTREGA
+- Ciudad: ${c.city}
+- Dirección: ${c.address}
+- Sector: ${c.sector}
+- Referencia: ${c.reference}
+- Ubicación de Google Maps: ${c.mapsUrl}
+
+FORMA DE PAGO
+- ${c.paymentMethod}
+
+_Pedido realizado desde la página web de Blue Water._`;
+            } else {
+                rawMessage = `*NUEVO PEDIDO HOGAR (RETIRO EN PLANTA) — BLUE WATER*
+
+DATOS DEL CLIENTE
+- Cliente: ${c.name}
+- Teléfono: ${c.phone}
+- Correo: ${c.email}
+
+DETALLES DEL PEDIDO
+- Modalidad: Retiro en Planta
+- Cantidad de botellones: ${hogarState.quantity}
+- Precio unitario: $1,50
+- Total a pagar: $${hogarState.totalPrice}
+
+LUGAR DE RETIRO
+- Planta: Av. Veintimilla y antigua vía a El Ángel, Tulcán
+
+FORMA DE PAGO
+- ${c.paymentMethod}
+
+_Pedido realizado desde la página web de Blue Water._`;
+            }
+
+            const encodedMessage = encodeURIComponent(rawMessage);
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            // Abrir WhatsApp en nueva pestaña
+            window.open(waUrl, '_blank');
+        }
+
+        // ============================================
+        // MODAL DE COBERTURA
+        // ============================================
+        const coverageModal = document.getElementById('coverage-modal');
+
+        function openCoverageModal() {
+            if (coverageModal) {
+                coverageModal.classList.add('active');
+                coverageModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeCoverageModal() {
+            if (coverageModal) {
+                coverageModal.classList.remove('active');
+                coverageModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeCoverageModalOnOverlay(e) {
+            if (e.target === coverageModal) {
+                closeCoverageModal();
+            }
+        }
+
+        // Menú móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => mobileNav.classList.toggle('active'));
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => mobileNav.classList.remove('active'));
+            });
+        }
+
+        // Header scrolled
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (header) {
+                header.classList.toggle('scrolled', window.scrollY > 40);
+            }
+        });
+
+        // Inicializar UI al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            updateUI();
+        });
+    </script>
+</body>
+</html>
